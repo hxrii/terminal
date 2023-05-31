@@ -35,10 +35,20 @@ h4{
     color:rgb(255, 255, 255);
     border: none;
     outline: none;
-    background: none;
-    
-    
-    
+    background: none; 
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  
+  #typingEffect {
+    animation: typing 3s steps(40, end);
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
   }
 
  

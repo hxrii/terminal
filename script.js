@@ -1,14 +1,29 @@
 const InputField = document.getElementById('textEnter');
 
-InputField.addEventListener('keydown', function(event) {
-    if (event.keyCode === 13) {
+InputField.addEventListener('input', function(event) {
+    if (event.target.value == 'help') {
       handleSubmit();
     }
   });
 
 function handleSubmit() {
+    
     const userInput = InputField.value;
-    // Process the user input
-    console.log(userInput);
-    // Perform any other actions based on the user input
+    
+    const text = "This is a typing animation effect.";
+    const typingEffect = document.getElementById("typingEffect");
+
+    let charIndex = 0;
+    function typeText() {
+        if (charIndex < text.length) {
+          typingEffect.textContent += text.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, 100);
+        }
+      }
+
+   typeText();
+    
+
 }
+
