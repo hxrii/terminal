@@ -21,24 +21,25 @@ function help() {
 
     
     
-    const text = "Commands intro >> Introduction edu     >> Education Details";
-    const typingEffect = document.getElementById("typingEffect");
+    const text1 = "<h4 id = 'Firsttxt'> </h4> <br> <h4>intro -> Introduction</h4>";
+    
+    let text = "Commands List"
+    const baseDiv = document.getElementById("typingEffect");
+    baseDiv.innerHTML=text1; 
+
+    let typingEffect = document.getElementById("Firsttxt");
     
     let charIndex = 0;
     function typeText() {
-        if (charIndex < text.length) {
-          typingEffect.textContent += text.charAt(charIndex);
+
+        while (charIndex < text.length) {
+          typingEffect.innerHTML += text.charAt(charIndex);
           charIndex++;
           setTimeout(typeText, 10);
         }
       }
-      typingEffect.innerHTML='Commands intro >> Introduction edu <br> <br>    >> Education Details'
-
-   typeText();
-
-
-   
-    
+      
+      typeText();
 
 }
 
